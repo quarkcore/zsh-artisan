@@ -25,28 +25,12 @@ This plugin adds an `artisan` shell command with the following features:
 
 ## Installation
 
-### [Antigen](https://github.com/zsh-users/antigen)
-
-Add the following bundle to your `.zshrc`:
-
-```zsh
-antigen bundle jessarcher/zsh-artisan
-```
-
-### [Fig](https://fig.io)
-
-Fig adds apps, shortcuts, and autocomplete to your existing terminal.
-
-Install `artisan` in just one click.
-
-<a href="https://fig.io/plugins/other/zsh-artisan_jessarcher" target="_blank"><img src="https://fig.io/badges/install-with-fig.svg" /></a>
-
 ### Oh-my-zsh
 
 First download the plugin to your oh-my-zsh custom plugin location:
 
 ```zsh
-git clone https://github.com/jessarcher/zsh-artisan.git ~/.oh-my-zsh/custom/plugins/artisan
+git clone https://github.com/quarkcore/zsh-artisan.git ~/.oh-my-zsh/custom/plugins/artisan
 ```
 
 > Note that the repository name is prefixed with `zsh-`, however the plugin
@@ -62,15 +46,13 @@ plugins=(
 )
 ```
 
-### [zplug](https://github.com/zplug/zplug)
+## Configuration
 
-Add the following to your `.zshrc`:
+To overwrite the php docker service name you can set the env var `ARTISAN_AUT_CMPL_DOCKER_SERVICE` in your `.zshrc` file. For example:
 
 ```zsh
-zplug "jessarcher/zsh-artisan"
+ARTISAN_AUT_CMPL_DOCKER_SERVICE=app-php
 ```
-
-## Configuration
 
 If you wish to automatically open new files created by `artisan make:*` commands
 then you will need to configure the `ARTISAN_OPEN_ON_MAKE_EDITOR` environment
@@ -128,8 +110,8 @@ Many more can be found at https://laravel-news.com/bash-aliases
 
 ## Homestead Setup
 
-The Zsh Artisan plugin can be installed automatically with any new or provisioned Laravel Homestead instance. 
-In the root of your Homestead project, add the following to your `after.sh` file. 
+The Zsh Artisan plugin can be installed automatically with any new or provisioned Laravel Homestead instance.
+In the root of your Homestead project, add the following to your `after.sh` file.
 ```bash
 ARTISAN=/home/vagrant/.oh-my-zsh/custom/plugins/artisan
 if [ -d "$ARTISAN" ]; then
@@ -140,7 +122,7 @@ else
   source /home/vagrant/.zshrc
 fi
 ```
-*Note:* If you are re-provisioning your Homestead box, and already have other Zsh plugins defined in your Zsh config files, you wil need to adjust the `sed` command to includes those in the list. 
+*Note:* If you are re-provisioning your Homestead box, and already have other Zsh plugins defined in your Zsh config files, you wil need to adjust the `sed` command to includes those in the list.
 
 ## License
 
